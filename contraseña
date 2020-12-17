@@ -1,0 +1,24 @@
+# El programa de la contraseña: 3 intentos para concidencia, sin importar mayusculas o minusculas
+# Definimos la contraseña
+clave="mp3"
+clave2=" "
+# Defino el contador a cero
+i=1
+intentos = int(3 - i)
+clave2 = input("Introduzca su contraseña:")
+if clave.lower()==clave2.lower():
+    print("Pase adelante")
+else:
+    i=2
+    clave2 = input("Contraseña incorrecta. Quedan 2 intentos. Introduzca su contraseña:")
+    if clave.lower() == clave2.lower():
+        print("Pase adelante")
+    else:
+        i = 3
+        clave2 = input("Contraseña incorrecta. Último intento. Introduzca su contraseña:")
+        if clave.lower() == clave2.lower():
+            print("Pase adelante")
+        else:
+            i = 4
+            clave2 = input("Amigo usted se jodió")
+# Como lo ves Raul? se puede usar el while? Como?
