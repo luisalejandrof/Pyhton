@@ -1,0 +1,13 @@
+# El programa de la contraseña: 3 intentos para concidencia, sin importar mayusculas o minusculas
+clave="LosTurrosCumbia" # Definimos contraseña dificil =)
+i=0 # Definimos una variable i como contador
+while i<3: # Limitamos el numero de iteraciones a 3
+    intentos=3-i # Defino el numero de intentos restantes para informarlo al usuario
+    clave2=input("Ingrese su clave ahora, usted tiene {} intentos: ".format(intentos))
+    i+=1 #Apenas el usuario ingresa una clave el programa suma uno al contador
+    if clave2.lower()==clave.lower(): # Comparador buscando la igualdad
+        i=3 # Si es igual paso el contador a 3 y detengo el ciclo while
+        print("Pase y póngase cómodo") # Y bueno se deja acceder al usuario
+    else: # Si no es igual lo ingresado a la clave entonces...
+        if i==3: # Si el usuario llego a 3 intentos ya no podrá seguir intentandolo
+            print("Se acabaron sus oportunidades") # Y se le informa
