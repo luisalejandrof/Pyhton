@@ -1,0 +1,34 @@
+# =============================================================================
+# -*- coding: utf-8 -*-
+# Spyder Editor - Creado el 22/12/2020 por Luis Figueroa
+# Graficar con pandas temperaturas dentro de un horno
+# =============================================================================
+import pandas as pd
+from matplotlib import pyplot as plt
+# Indicamos al programa que lea el archivo datos.txt
+# Establecemos que el encabezado es la primera fila
+# Un espacio en blanco es el delimitador
+datos = pd.read_csv('datos.txt', header = 0, delim_whitespace=(True))
+# Datos para x, la columna 0, o sea la hora de medición
+x = datos.iloc[:,0]
+xa = datos.iloc[:,0]
+# Datos para y, será la temperatura (°C) en el portico 3
+y = datos.iloc[:,4]
+ya = datos.iloc[:,3]
+# Ahora llamamos a la función pyplot como plt
+fig, ax = plt.subplots()
+ax.set_title(r'Temperaturas del horno')
+plt.plot(x ,y, color='green', marker='.', linestyle='solid')
+plt.plot(xa ,ya, color='blue', marker='.', linestyle='solid')
+plt.axhline(y=1320, color='r', linestyle='-')
+plt.axhline(y=1330, color='green', linestyle='-')
+plt.axhline(y=1340, color='r', linestyle='-')
+# Etiqueta para el eje horizontal
+plt.xlabel("Hora de medición")
+# Estiqueta para el eje vertical
+plt.ylabel("Temperatura tercer pórtico (°C)")
+plt.show()
+# Grafico linea de valor minimo
+# Calculo de estadisticas descriptivas para la temperatura
+print("Estadisticas descriptivas sobre la temperatura en el tercer pórtico")
+print(y.describe())
