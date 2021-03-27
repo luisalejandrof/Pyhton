@@ -1,0 +1,7 @@
+#Practica del libro de Matt Harrison - "Learning the Pandas Library" - pandas.pydata.org
+# Con Pandas podemos reemplazar Excel, realizamos ETL, procesamos datos tabulares, cargar datos desde CSV o archivos JSON
+# Mucas aplicaciones para analisis de series de tiempo (esto en seguimiento a valores en elmercado financiero)
+import pandas as pd
+import matplotlib as plt
+df=pd.read_csv ('datos.csv')
+print (df)
